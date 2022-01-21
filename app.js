@@ -1,27 +1,31 @@
 import { getPokedex } from './fetch.js';
+import { getStarWarsPeople } from './fetch.js';
 
 // import functions
 console.log('app js is running');
 // grab DOM elements
-const template = document.querySelector('#template');
-const list = document.querySelector('#list');
+const pokeTemplate = document.querySelector('#pokemon-template');
+const pokeList = document.querySelector('#list1');
 const select = document.querySelector('#select');
+const starTemplate = document.querySelector('#starwars-template');
+const starList = document.querySelector('#list2');
+
 
 //test
-console.log('elements ', template, list);
+console.log('elements ', pokeTemplate, pokeList, select, starTemplate, starList);
 //load api data
 async function loadPokedex() {
     const pokedex = await getPokedex();
 
     for (let pokemon of pokedex) {
-        const clone = template.content.cloneNode(true);
+        const clone = pokeTemplate.content.cloneNode(true);
         
         const name = clone.querySelector('#pokemon-name');
         const defense = clone.querySelector('#defense');
         const attack = clone.querySelector('#attack');
         const image = clone.querySelector('#image');
         const hp = clone.querySelector('#hp');
-        const url = clone.querySelector('#url')
+        const url = clone.querySelector('#url');
         
         // console.log('testvar', name, defense, attack, image, hp); test passed
 
@@ -32,12 +36,32 @@ async function loadPokedex() {
         defense.textContent = 'Defense Points: ' + pokemon.defense;
         url.href = pokemon.pokedex;
 
-        list.appendChild(clone);
+        pokeList.appendChild(clone);
     }
 
 }
 async function loadVader() {
-    console.log('Luke');
+    const starWars = await getStarWarsPeople();
+
+    for (let starwars of starWars) {
+        const cloneStar = starTemplate.content.cloneNode(true);
+
+        const starName = cloneStar.querySelector('#starwars-name');
+        const birthYear = cloneStar.querySelector('#birth-year');
+        const eyeColor = cloneStar.querySelector('#eye-color');
+        const height = cloneStar.querySelector('#height');
+
+       // console.log('testvar', starName, birthYear, eyeColor, height);
+
+        starName.textContent = starwars.name;
+        birthYear.textContent = starwars.birth_year;
+        eyeColor.textContent = starwars.eye_color;
+        height.textContent = starwars.height;
+
+        starList.appendChild(cloneStar);
+    }
+
+    
 }
 
 select.addEventListener('change', async (e) => {

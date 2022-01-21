@@ -16,7 +16,7 @@
     </head>
 
     <body>
-        <template id="template" name="component-name">
+        <template id="pokemon-template" name="pokemon-template">
             <div class="pokemon-card">
                 <h2 id="pokemon-name"></h2>
                 <a id="url" href=""><img id="image"></a>
@@ -26,6 +26,14 @@
                 
             </div>
         </template>
+        <template id="starwars-template" name="starwars-template">
+            <div class="starwars-char">
+                <h2 id="starwars-name"></h2>
+                <p id="birth-year"></p>
+                <p id="eye-color"></p>
+                <p id="height"></p>
+            </div>
+        </template>        
         <header>
             <h1>My Pokemon Cards</h1>
         </header>
@@ -38,7 +46,12 @@
                 </select>
             
             <div class="pokemon-container">
-                <ul id='list'>
+                <ul id='list1'>
+                    
+                </ul>
+            </div>
+            <div class="starwars-container">
+                <ul id='list2'>
                     
                 </ul>
             </div>
