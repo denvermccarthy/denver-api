@@ -8,31 +8,39 @@
             href="https://fonts.googleapis.com/css2?family=Titillium+Web:wght@300&display=swap"
             rel="stylesheet"
         />
-        <link rel="stylesheet" href="./styles/style.css" />
+        <!-- <link rel="stylesheet" href="./styles/style.css" />
         <link rel="stylesheet" href="./styles/reset.css" />
-        <link rel="stylesheet" href="./styles/global.css" />
+        <link rel="stylesheet" href="./styles/global.css" /> -->
 
-        <title>Cool Web</title>
+        <title>Pokemon</title>
     </head>
 
     <body>
         <template id="template" name="component-name">
-            <div>
-                <div id="defense"></div>
-                <div id="pokemon"></div>
-                <div id="image"></div>
+            <div class="pokemon-card">
+                <img id="image">
+                <h2 id="pokemon-name"></h2>
+                <p id="defense"></p>
+                <p id="attack"></p>
+                <p id="hp"></p>
+                
             </div>
         </template>
         <header>
-            <h1>Cool Web Project</h1>
+            <h1>My Pokemon Cards</h1>
         </header>
 
         <main>
+            <h3>Click this button and I'll show you my pokemon cards.</h3>
+            <button id="button"type="button">I'm right Here!</button>
+            
+            
             <ul id='list'>
-                    <div id="defense"></div>
-                    <div id="pokemon"></div>
-                    <div id="image"></div>
+                <div class="pokemon-card">
+                    
+                </div>
             </ul>
+                        
         </main>
 
         <footer>&copy; 2021 Aspiring Software Developer</footer>
