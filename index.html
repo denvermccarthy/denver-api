@@ -8,19 +8,50 @@
             href="https://fonts.googleapis.com/css2?family=Titillium+Web:wght@300&display=swap"
             rel="stylesheet"
         />
-        <link rel="stylesheet" href="./styles/style.css" />
+        <!-- <link rel="stylesheet" href="./styles/style.css" />
         <link rel="stylesheet" href="./styles/reset.css" />
-        <link rel="stylesheet" href="./styles/global.css" />
-
-        <title>Cool Web</title>
+        <link rel="stylesheet" href="./styles/global.css" /> -->
+        <link rel="stylesheet" href="./styles/mystyle.css">
+        <title>Pokemon</title>
     </head>
 
     <body>
+        <template id="template" name="pokemon-template">
+            <div class="">
+                <h2 class="name star-name"></h2>
+                <a id="url" href="" target=""><img id="image"></a>
+                <p id="birth-year" class="defense"></p>
+                <p class="attack eye-color"></p>
+                <p class="hp height"></p>
+                
+            </div>
+        </template>
+        <!-- <template id="starwars-template" name="starwars-template">
+            <div class="starwars-char">
+                <h2 id="starwars-name"></h2>
+                <p id="birth-year"></p>
+                <p id="eye-color"></p>
+                <p id="height"></p>
+            </div> -->
+        </template>        
         <header>
-            <h1>Cool Web Project</h1>
+            <h1>My Pokemon Cards</h1>
         </header>
 
-        <main></main>
+        <main>
+            <label for="api-list">Click one of these to see something cool.</label>
+                <select name="api-list" id="select">
+                    <option value="0">Pokemon</option>
+                    <option value="1">Darth Vader</option>
+                </select>
+            
+            <div class="pokemon-container">
+                <ul id="list" class="">
+                    
+                </ul>
+            </div>
+
+        </main>
 
         <footer>&copy; 2021 Aspiring Software Developer</footer>
 

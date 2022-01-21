@@ -5,7 +5,14 @@
 If you work on more than one feature at a time, you are guaranteed to multiply your bugs and your anxiety.
 
 ## Making a plan
-
+## DENVER'S PLAN
+1. Create a template that stores all the info we want from out clones
+2. create a list that will list all of our clones info inside html tags
+3. create js elements that select those tags
+acp
+5. create a function that renders api objects 
+4. 
+5. 
 1. **Make a drawing of your app. Simple "wireframes"**
 1. **Once you have a drawing, name the HTML elements you'll need to realize your vision**
 1. **For each HTML element ask: Why do I need this?**
