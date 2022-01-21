@@ -19,7 +19,7 @@
         <template id="template" name="component-name">
             <div class="pokemon-card">
                 <h2 id="pokemon-name"></h2>
-                <img id="image">
+                <a id="url" href=""><img id="image"></a>
                 <p id="defense"></p>
                 <p id="attack"></p>
                 <p id="hp"></p>
@@ -31,9 +31,11 @@
         </header>
 
         <main>
-            <h3>Click this button and I'll show you my pokemon cards.</h3>
-            <button id="button"type="button">I'm right Here!</button>
-            
+            <label for="api-list">Click one of these to see something cool.</label>
+                <select name="api-list" id="select">
+                    <option value="0">Pokemon</option>
+                    <option value="1">Darth Vader</option>
+                </select>
             
             <div class="pokemon-container">
                 <ul id='list'>

@@ -5,7 +5,7 @@ console.log('app js is running');
 // grab DOM elements
 const template = document.querySelector('#template');
 const list = document.querySelector('#list');
-const button = document.querySelector('#button');
+const select = document.querySelector('#select');
 
 //test
 console.log('elements ', template, list);
@@ -21,6 +21,7 @@ async function loadPokedex() {
         const attack = clone.querySelector('#attack');
         const image = clone.querySelector('#image');
         const hp = clone.querySelector('#hp');
+        const url = clone.querySelector('#url')
         
         // console.log('testvar', name, defense, attack, image, hp); test passed
 
@@ -29,14 +30,26 @@ async function loadPokedex() {
         hp.textContent = 'Hit points: ' + pokemon.hp;
         attack.textContent = 'Attack Points: ' + pokemon.attack;
         defense.textContent = 'Defense Points: ' + pokemon.defense;
+        url.href = pokemon.pokedex;
 
         list.appendChild(clone);
     }
 
 }
+async function loadVader() {
+    console.log('Luke');
+}
 
-button.addEventListener('click', function displayCards(){
-    loadPokedex();
+select.addEventListener('change', async (e) => {
+    const selected = e.target.selectedIndex;
+    
+    if (selected === 0) {
+        await loadPokedex();
+        console.log('POKE');
+    } else {
+        loadVader();
+        console.log('I am your father.');  
+    }
 });
 
     // set event listeners 
