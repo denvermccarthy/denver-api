@@ -1,0 +1,46 @@
+* {
+  background-color: coral;
+
+}
+
+.pokemon-card {
+  display: grid;
+  border: 10px solid darkgoldenrod;
+  border-radius: 5px;
+  background-color: gold;
+  width: 400px;
+  height: 500px;
+  justify-items: center;
+  
+}
+
+.pokemon-card #image {
+  background-color: white;
+  border: 5px solid black;
+  border-radius: 5px;
+  width: 200px;
+  height: 200px;
+  margin: 0px 20px; 
+}
+.pokemon-card #pokemon-name {
+  font-size: 2em;
+  background-color: gold;
+  
+}
+.pokemon-card #defense {
+  background-color: gold;
+}
+.pokemon-card #attack {
+  background-color: gold;
+}
+.pokemon-card #hp {
+  background-color: gold;
+}
+
+#list {
+display: grid;
+grid-template-columns: 1fr 1fr;
+gap: 20px;
+justify-items: center;
+}
+

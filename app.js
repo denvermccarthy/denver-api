@@ -1,4 +1,4 @@
-import { getPokedex } from "./fetch.js";
+import { getPokedex } from './fetch.js';
 
 // import functions
 console.log('app js is running');
@@ -26,9 +26,9 @@ async function loadPokedex() {
 
         name.textContent = pokemon.pokemon;
         image.src = pokemon.url_image;
-        hp.textContent = pokemon.hp;
-        attack.textContent = pokemon.attack;
-        defense.textContent = pokemon.defense;
+        hp.textContent = 'Hit points: ' + pokemon.hp;
+        attack.textContent = 'Attack Points: ' + pokemon.attack;
+        defense.textContent = 'Defense Points: ' + pokemon.defense;
 
         list.appendChild(clone);
     }
