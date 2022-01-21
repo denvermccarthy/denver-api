@@ -4,30 +4,29 @@ import { getStarWarsPeople } from './fetch.js';
 // import functions
 console.log('app js is running');
 // grab DOM elements
-const pokeTemplate = document.querySelector('#pokemon-template');
-const pokeList = document.querySelector('#list1');
+const template = document.querySelector('template');
+const list = document.querySelector('#list');
 const select = document.querySelector('#select');
-const starTemplate = document.querySelector('#starwars-template');
-const starList = document.querySelector('#list2');
+
 
 
 //test
-console.log('elements ', pokeTemplate, pokeList, select, starTemplate, starList);
+console.log('elements ', template, list, select,);
 //load api data
 async function loadPokedex() {
     const pokedex = await getPokedex();
 
     for (let pokemon of pokedex) {
-        const clone = pokeTemplate.content.cloneNode(true);
+        const clone = template.content.cloneNode(true);
         
-        const name = clone.querySelector('#pokemon-name');
-        const defense = clone.querySelector('#defense');
-        const attack = clone.querySelector('#attack');
+        const name = clone.querySelector('.name');
+        const defense = clone.querySelector('.defense');
+        const attack = clone.querySelector('.attack');
         const image = clone.querySelector('#image');
-        const hp = clone.querySelector('#hp');
+        const hp = clone.querySelector('.hp');
         const url = clone.querySelector('#url');
         
-        // console.log('testvar', name, defense, attack, image, hp); test passed
+        console.log('testvar', name, defense, attack, image, hp); // test passed
 
         name.textContent = pokemon.pokemon;
         image.src = pokemon.url_image;
@@ -36,7 +35,9 @@ async function loadPokedex() {
         defense.textContent = 'Defense Points: ' + pokemon.defense;
         url.href = pokemon.pokedex;
 
-        pokeList.appendChild(clone);
+        list.classList.add('pokemon');
+        list.appendChild(clone);
+        // starList.remove();
     }
 
 }
@@ -44,35 +45,47 @@ async function loadVader() {
     const starWars = await getStarWarsPeople();
 
     for (let starwars of starWars) {
-        const cloneStar = starTemplate.content.cloneNode(true);
+        const clone = template.content.cloneNode(true);
 
-        const starName = cloneStar.querySelector('#starwars-name');
-        const birthYear = cloneStar.querySelector('#birth-year');
-        const eyeColor = cloneStar.querySelector('#eye-color');
-        const height = cloneStar.querySelector('#height');
+        const name = clone.querySelector('.star-name');
+        const birthYear = clone.querySelector('#birth-year');
+        const eyeColor = clone.querySelector('.eye-color');
+        const height = clone.querySelector('.height');
 
-       // console.log('testvar', starName, birthYear, eyeColor, height);
+        console.log('testvarstar', name, birthYear, eyeColor, height);
 
-        starName.textContent = starwars.name;
+        name.textContent = starwars.name;
         birthYear.textContent = starwars.birth_year;
         eyeColor.textContent = starwars.eye_color;
         height.textContent = starwars.height;
 
-        starList.appendChild(cloneStar);
+        list.classList.add('starwars');
+
+        list.appendChild(clone);
+        // pokeList.remove();
     }
 
     
 }
 
-select.addEventListener('change', async (e) => {
+select.addEventListener('change', async(e) => {
     const selected = e.target.selectedIndex;
-    
+    const clear = document.querySelector('#list');
     if (selected === 0) {
+       // clear all divs before populating
+        clear.textContent = '';
         await loadPokedex();
-        console.log('POKE');
+        list.classList.remove('starwars');
+       
+       
+        // console.log('POKE');
     } else {
+      // clear all divs before populating
+        clear.textContent = '';
         loadVader();
-        console.log('I am your father.');  
+        list.classList.remove('pokemon');
+    
+        // console.log('I am your father.');  
     }
 });
 
